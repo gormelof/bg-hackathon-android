@@ -14,13 +14,13 @@
         <activity android:name=".activities.TravelActivity">
         </activity>
         <activity android:name=".activities.PackCreateActivity">
+        </activity>
+        <activity android:name=".activities.TravelCreateActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>
-        <activity android:name=".activities.TravelCreateActivity">
         </activity>
         <activity android:name=".activities.PackActivity">
         </activity>
