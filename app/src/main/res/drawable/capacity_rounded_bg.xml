@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/capacity_rounded_bg.xml -->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
     <item>
         <shape>
-            <solid android:color="#D253BE" />
-
-            <corners android:radius="3dp" />
+            <solid android:color="@color/ubuntuOrange" />
+            <corners android:radius="5dp" />
         </shape>
     </item>
-
 </layer-list>

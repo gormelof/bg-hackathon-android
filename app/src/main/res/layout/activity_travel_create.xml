@@ -72,12 +72,14 @@
         tools:ignore="MissingPrefix"/>
 
     <TextView
+        fontPath="fonts/Ubuntu-Regular.ttf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:text="How much you can take a package?"
         android:textColor="@color/concrete"
-        android:textSize="14sp"/>
+        android:textSize="14sp"
+        tools:ignore="MissingPrefix"/>
 
     <Button
         fontPath="fonts/Ubuntu-Regular.ttf"

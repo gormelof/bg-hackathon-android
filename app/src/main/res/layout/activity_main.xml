@@ -148,7 +148,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/button_rect"
+            android:background="@drawable/capacity_rounded_bg"
             android:text="SEARCH"
             android:textColor="#ffffff"/>
     </LinearLayout>

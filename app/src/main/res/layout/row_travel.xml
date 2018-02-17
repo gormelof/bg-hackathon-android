@@ -94,7 +94,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:padding="5dp"
-            android:background="@drawable/button_rect"
+            android:background="@drawable/capacity_rounded_bg"
             android:layout_weight="0.2">
 
             <TextView

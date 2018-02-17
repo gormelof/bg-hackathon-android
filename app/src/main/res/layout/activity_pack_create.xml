@@ -11,15 +11,16 @@
     tools:context="hackathon.baggage.activities.PackCreateActivity">
 
     <TextView
+        fontPath="fonts/Ubuntu-Bold.ttf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Create Package"
         android:textColor="@color/black"
         android:textSize="25sp"
-        fontPath="fonts/Ubuntu-Bold.ttf"
         tools:ignore="MissingPrefix"/>
 
     <EditText
+        fontPath="fonts/Ubuntu-Regular.ttf"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:padding="8dp"
@@ -30,10 +31,10 @@
         android:textSize="16sp"
         android:hint="From"
         android:textColorHint="@color/concrete"
-        fontPath="fonts/Ubuntu-Regular.ttf"
         tools:ignore="MissingPrefix"/>
 
     <EditText
+        fontPath="fonts/Ubuntu-Regular.ttf"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:padding="8dp"
@@ -44,10 +45,10 @@
         android:textSize="16sp"
         android:hint="To"
         android:textColorHint="@color/concrete"
-        fontPath="fonts/Ubuntu-Regular.ttf"
         tools:ignore="MissingPrefix"/>
 
     <EditText
+        fontPath="fonts/Ubuntu-Regular.ttf"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:padding="8dp"
@@ -58,10 +59,10 @@
         android:textSize="16sp"
         android:hint="Date"
         android:textColorHint="@color/concrete"
-        fontPath="fonts/Ubuntu-Regular.ttf"
         tools:ignore="MissingPrefix"/>
 
     <EditText
+        fontPath="fonts/Ubuntu-Regular.ttf"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:padding="8dp"
@@ -72,18 +73,20 @@
         android:textSize="16sp"
         android:hint="Weight (Kg)"
         android:textColorHint="@color/concrete"
-        fontPath="fonts/Ubuntu-Regular.ttf"
         tools:ignore="MissingPrefix"/>
 
     <TextView
+        fontPath="fonts/Ubuntu-Regular.ttf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:text="How much do you send a package?"
         android:textColor="@color/concrete"
-        android:textSize="14sp"/>
+        android:textSize="14sp"
+        tools:ignore="MissingPrefix"/>
 
     <Button
+        fontPath="fonts/Ubuntu-Regular.ttf"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:padding="8dp"
@@ -92,7 +95,6 @@
         android:text="Create"
         android:textColor="@color/white"
         android:textSize="16sp"
-        fontPath="fonts/Ubuntu-Regular.ttf"
         tools:ignore="MissingPrefix"/>
 
 </LinearLayout>
