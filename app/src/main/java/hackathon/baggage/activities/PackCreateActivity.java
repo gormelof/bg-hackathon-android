@@ -21,9 +21,6 @@ public class PackCreateActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pack_create);
     }
 
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
-    }
+
 
 }

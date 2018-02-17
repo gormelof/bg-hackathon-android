@@ -1,12 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/white">
+
+    <TextView
+        fontPath="fonts/Ubuntu-Bold.ttf"
+        android:id="@+id/tv_activity_travel_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Traveler List"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        tools:ignore="MissingPrefix"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_travel_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_below="@id/tv_activity_travel_title"
+        android:layout_marginTop="30dp"/>
 
 </RelativeLayout>
