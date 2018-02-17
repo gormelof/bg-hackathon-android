@@ -1,110 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="10dp"
-    android:orientation="horizontal">
+    android:layout_margin="5dp"
+    app:cardCornerRadius="5dp">
 
-    <!-- start info container -->
     <LinearLayout
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_weight="0.8">
+        android:padding="10dp"
+        android:orientation="horizontal">
 
-        <!-- start user info -->
+        <!-- start info container -->
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:layout_weight="0.8">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/iv_profile_photo"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/profile"
-                app:civ_border_width="0.1dp"
-                app:civ_border_color="#FF000000"/>
-
-            <TextView
-                android:id="@+id/tv_username"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ömer Faruk Görmel"
-                android:layout_gravity="center"
-                android:layout_marginLeft="5dp"/>
-        </LinearLayout>
-        <!-- end user info -->
-
-        <!-- start travel info -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
+            <!-- start user info -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tv_source_location"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Istanbul"/>
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_profile_photo"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/profile"
+                    app:civ_border_width="0.1dp"
+                    app:civ_border_color="#FF000000"/>
 
                 <TextView
+                    android:id="@+id/tv_username"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="2dp"
-                    android:paddingRight="2dp"
-                    android:text="->"/>
-
-                <TextView
-                    android:id="@+id/tv_destination_location"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="London"/>
-
+                    android:text="Ömer Faruk Görmel"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"/>
             </LinearLayout>
+            <!-- end user info -->
 
-            <TextView
-                android:id="@+id/tv_travel_date"
+            <!-- start travel info -->
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="10 Mart 2018"/>
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_source_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Istanbul"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="2dp"
+                        android:paddingRight="2dp"
+                        android:text="->"/>
+
+                    <TextView
+                        android:id="@+id/tv_destination_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="London"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_travel_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10 Mart 2018"/>
+            </LinearLayout>
+            <!-- end travel info -->
         </LinearLayout>
-        <!-- end travel info -->
-    </LinearLayout>
-    <!-- end info container -->
+        <!-- end info container -->
 
-    <!-- start weight container -->
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:padding="5dp"
-        android:background="@drawable/button_rect"
-        android:layout_weight="0.2">
+        <!-- start weight container -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="5dp"
+            android:background="@drawable/button_rect"
+            android:layout_weight="0.2">
 
-        <TextView
-            android:id="@+id/tv_baggage_capacity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="24"
-            android:textSize="20sp"
-            android:textColor="#FFFFFF"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="kg"
-            android:textSize="15sp"
-            android:textColor="#FFFFFF"/>
+            <TextView
+                android:id="@+id/tv_baggage_capacity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="24"
+                android:textSize="20sp"
+                android:textColor="#FFFFFF"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="kg"
+                android:textSize="15sp"
+                android:textColor="#FFFFFF"/>
+        </LinearLayout>
+        <!-- end weight container -->
+
     </LinearLayout>
-    <!-- end weight container -->
-    
-</LinearLayout>
+</android.support.v7.widget.CardView>
