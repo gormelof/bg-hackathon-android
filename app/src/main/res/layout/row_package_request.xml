@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="5dp"
+    app:cardBackgroundColor="@color/clouds">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_weight="0.8">
+
+            <!-- start travel info -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:layout_width="24sp"
+                        android:layout_height="24sp"
+                        android:src="@drawable/point_objects"
+                        android:tint="@color/ubuntuOrange"/>
+
+                    <TextView
+                        fontPath="fonts/Ubuntu-Medium.ttf"
+                        android:id="@+id/tv_row_package_request_from"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="3dp"
+                        android:text="Istanbul"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        tools:ignore="MissingPrefix"/>
+
+                    <TextView
+                        fontPath="fonts/Ubuntu-Medium.ttf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" - "
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        tools:ignore="MissingPrefix"/>
+
+                    <TextView
+                        fontPath="fonts/Ubuntu-Medium.ttf"
+                        android:id="@+id/tv_row_package_request_to"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="London"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        tools:ignore="MissingPrefix"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="24sp"
+                        android:layout_height="24sp"
+                        android:src="@drawable/calendar"
+                        android:tint="@color/ubuntuOrange"/>
+
+                    <TextView
+                        fontPath="fonts/Ubuntu-Medium.ttf"
+                        android:id="@+id/tv_row_package_request_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="3dp"
+                        android:text="10 Mart 2018"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        tools:ignore="MissingPrefix"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <!-- end travel info -->
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="5dp"
+            android:layout_weight="0.2"
+            android:background="@drawable/capacity_rounded_bg">
+
+            <TextView
+                fontPath="fonts/Ubuntu-Medium.ttf"
+                android:id="@+id/tv_row_package_request_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="24"
+                android:textSize="25sp"
+                android:textColor="#FFFFFF"
+                tools:ignore="MissingPrefix"/>
+
+            <TextView
+                fontPath="fonts/Ubuntu-Regular.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="kg"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                tools:ignore="MissingPrefix"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

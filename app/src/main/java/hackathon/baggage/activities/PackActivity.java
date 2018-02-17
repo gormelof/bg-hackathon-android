@@ -1,15 +1,18 @@
 package hackathon.baggage.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import hackathon.baggage.HackathonService;
 import hackathon.baggage.R;
 import hackathon.baggage.ServiceGenerator;
 import hackathon.baggage.adapters.PackageAdapter;
+import hackathon.baggage.listeners.RecyclerItemClickListener;
 import hackathon.baggage.response.packs.Packs;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -39,13 +42,28 @@ public class PackActivity extends AppCompatActivity {
         Call<Packs> call = hackathonService.getAllPacks();
         call.enqueue(new Callback<Packs>() {
             @Override
-            public void onResponse(Call<Packs> call, Response<Packs> response) {
+            public void onResponse(Call<Packs> call, final Response<Packs> response) {
                 if (response.isSuccessful()) {
                     mPackageAdapter = new PackageAdapter(getApplicationContext(), response.body().getData());
                     mRecyclerView.setAdapter(mPackageAdapter);
                     LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
                     linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
                     mRecyclerView.setLayoutManager(linearLayoutManager);
+
+                    mRecyclerView.addOnItemTouchListener(
+                            new RecyclerItemClickListener(getApplicationContext(), mRecyclerView ,new RecyclerItemClickListener.OnItemClickListener() {
+                                @Override public void onItemClick(View view, int position) {
+                                    String userId = response.body().getData().get(position).getUser().getId();
+                                    Intent intent = new Intent(getApplicationContext(), PackageTravelSelectActivity.class);
+                                    intent.putExtra("USER_ID", userId);
+                                    startActivity(intent);
+                                }
+
+                                @Override public void onLongItemClick(View view, int position) {
+                                    // do whatever
+                                }
+                            })
+                    );
                 }
             }
 

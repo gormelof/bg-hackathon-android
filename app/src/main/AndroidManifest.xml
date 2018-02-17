@@ -32,6 +32,8 @@
         </activity>
         <activity android:name=".activities.StatusActivity">
         </activity>
+        <activity android:name=".activities.PackageTravelSelectActivity">
+        </activity>
     </application>
 
 </manifest>

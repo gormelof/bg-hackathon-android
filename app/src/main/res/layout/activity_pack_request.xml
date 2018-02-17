@@ -1,10 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/white"
     tools:context="hackathon.baggage.activities.PackRequestActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        fontPath="fonts/Ubuntu-Bold.ttf"
+        android:id="@+id/tv_activity_pack_request_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Travel"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        tools:ignore="MissingPrefix"/>
+
+    <TextView
+        fontPath="fonts/Ubuntu-Regular.ttf"
+        android:id="@+id/tv_activity_pack_request_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_activity_pack_request_title"
+        android:text="Choose travel to move package with you"
+        android:textColor="@color/concrete"
+        android:textSize="16sp"
+        tools:ignore="MissingPrefix"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_pack_request_travel_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tv_activity_pack_request_description"
+        android:layout_marginTop="30dp"/>
+
+</RelativeLayout>
