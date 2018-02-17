@@ -28,14 +28,14 @@
                 android:orientation="horizontal">
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/iv_profile_photo"
+                    android:id="@+id/iv_row_package_photo"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/profile"/>
 
                 <TextView
                     fontPath="fonts/Ubuntu-Regular.ttf"
-                    android:id="@+id/tv_username"
+                    android:id="@+id/tv_row_package_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -69,6 +69,7 @@
 
                     <TextView
                         fontPath="fonts/Ubuntu-Medium.ttf"
+                        android:id="@+id/tv_row_package_from"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingStart="3dp"
@@ -88,6 +89,7 @@
 
                     <TextView
                         fontPath="fonts/Ubuntu-Medium.ttf"
+                        android:id="@+id/tv_row_package_to"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="London"
@@ -103,19 +105,15 @@
                     android:orientation="horizontal"
                     android:gravity="center">
 
-                    <ImageView
-                        android:layout_width="24sp"
-                        android:layout_height="24sp"
-                        android:src="@drawable/calendar"
-                        android:tint="@color/ubuntuOrange"/>
-
                     <TextView
-                        fontPath="fonts/Ubuntu-Medium.ttf"
+                        fontPath="fonts/Ubuntu-Light.ttf"
+                        android:id="@+id/tv_row_package_create_at"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingStart="3dp"
                         android:text="10 Mart 2018"
-                        android:textColor="@color/black"
+                        android:textColor="@color/concrete"
+                        android:textSize="16sp"
                         tools:ignore="MissingPrefix"/>
 
                 </LinearLayout>
@@ -137,7 +135,7 @@
 
             <TextView
                 fontPath="fonts/Ubuntu-Medium.ttf"
-                android:id="@+id/tv_baggage_capacity"
+                android:id="@+id/tv_row_package_weight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="24"

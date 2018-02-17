@@ -119,6 +119,7 @@
                         android:paddingStart="3dp"
                         android:text="10 Mart 2018"
                         android:textColor="@color/black"
+                        android:textSize="16sp"
                         tools:ignore="MissingPrefix"/>
 
                 </LinearLayout>
