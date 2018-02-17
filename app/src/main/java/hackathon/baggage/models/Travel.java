@@ -1,14 +1,14 @@
-package hackathon.baggage;
+package hackathon.baggage.models;
 
 
 import java.util.ArrayList;
 
 public class Travel {
-    User user;
-    String baggageCapacity;
-    String source;
-    String destination;
-    String date;
+    private User user;
+    private String baggageCapacity;
+    private String source;
+    private String destination;
+    private String date;
 
     public Travel(User user, String baggageCapacity, String source, String destination, String date) {
         this.user = user;

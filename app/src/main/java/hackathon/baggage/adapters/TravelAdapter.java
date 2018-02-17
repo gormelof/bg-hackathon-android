@@ -1,4 +1,4 @@
-package hackathon.baggage;
+package hackathon.baggage.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -11,6 +11,9 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+
+import hackathon.baggage.R;
+import hackathon.baggage.models.Travel;
 
 public class TravelAdapter extends RecyclerView.Adapter<TravelAdapter.TravelViewHolder> {
 
@@ -34,7 +37,7 @@ public class TravelAdapter extends RecyclerView.Adapter<TravelAdapter.TravelView
     public void onBindViewHolder(TravelViewHolder holder, int position) {
         Picasso.with(mContext).load(mDataList.get(position).getUser().getProfileImageUrl()).into(holder.mProfilePhoto);
         holder.mUsername.setText(mDataList.get(position).getUser().getName());
-        holder.mBaggageCapacity.setText(mDataList.get(position).baggageCapacity);
+        holder.mBaggageCapacity.setText(mDataList.get(position).getBaggageCapacity());
         holder.mSourceLocation.setText(mDataList.get(position).getSource());
         holder.mDestinationLocation.setText(mDataList.get(position).getDestination());
         holder.mTravelDate.setText(mDataList.get(position).getDate());

@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#E95420</color>
+
+    <!-- start ubuntu color platte -->
+    <color name="ubuntuOrange">#E95420</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <!-- end ubuntu color platte -->
+
+    <!-- start flat ui colors -->
+    <color name="clouds">#ecf0f1</color>
+    <color name="silver">#bdc3c7</color>
+    <color name="concrete">#95a5a6</color>
+    <!-- end flat ui colors-->
 </resources>

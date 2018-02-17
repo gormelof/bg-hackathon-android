@@ -10,13 +10,27 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".TravelActivity">
+        android:theme="@style/Theme.AppCompat.NoActionBar">
+        <activity android:name=".activities.TravelActivity">
+        </activity>
+        <activity android:name=".activities.PackCreateActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity android:name=".activities.TravelCreateActivity">
+        </activity>
+        <activity android:name=".activities.PackActivity">
+        </activity>
+        <activity android:name=".activities.PackRequestActivity">
+        </activity>
+        <activity android:name=".activities.TravelRequestActivity">
+        </activity>
+        <activity android:name=".activities.NotificationActivity">
+        </activity>
+        <activity android:name=".activities.StatusActivity">
         </activity>
     </application>
 

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/white"
+    tools:context="hackathon.baggage.activities.PackCreateActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Package"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        fontPath="fonts/Ubuntu-Bold.ttf"
+        tools:ignore="MissingPrefix"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:padding="8dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/rounded_edittext"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:hint="From"
+        android:textColorHint="@color/concrete"
+        fontPath="fonts/Ubuntu-Regular.ttf"
+        tools:ignore="MissingPrefix"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:padding="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_edittext"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:hint="To"
+        android:textColorHint="@color/concrete"
+        fontPath="fonts/Ubuntu-Regular.ttf"
+        tools:ignore="MissingPrefix"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:padding="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_edittext"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:hint="Date"
+        android:textColorHint="@color/concrete"
+        fontPath="fonts/Ubuntu-Regular.ttf"
+        tools:ignore="MissingPrefix"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:padding="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_edittext"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:hint="Weight (Kg)"
+        android:textColorHint="@color/concrete"
+        fontPath="fonts/Ubuntu-Regular.ttf"
+        tools:ignore="MissingPrefix"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:padding="8dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/rounded_button"
+        android:text="Create"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        fontPath="fonts/Ubuntu-Regular.ttf"
+        tools:ignore="MissingPrefix"/>
+
+</LinearLayout>

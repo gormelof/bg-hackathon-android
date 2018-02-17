@@ -1,4 +1,4 @@
-package hackathon.baggage;
+package hackathon.baggage.models;
 
 public class User {
     private String profileImageUrl;

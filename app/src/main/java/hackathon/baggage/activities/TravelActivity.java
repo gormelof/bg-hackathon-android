@@ -1,9 +1,13 @@
-package hackathon.baggage;
+package hackathon.baggage.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+
+import hackathon.baggage.R;
+import hackathon.baggage.models.Travel;
+import hackathon.baggage.adapters.TravelAdapter;
 
 public class TravelActivity extends AppCompatActivity {
     private static final String TAG = TravelActivity.class.getSimpleName().toUpperCase();
