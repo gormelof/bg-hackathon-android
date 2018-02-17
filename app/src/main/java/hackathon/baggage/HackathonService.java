@@ -1,5 +1,6 @@
 package hackathon.baggage;
 
+import hackathon.baggage.response.cities.Cities;
 import hackathon.baggage.response.packs.Packs;
 import hackathon.baggage.response.travels.Travels;
 import retrofit2.Call;
@@ -12,9 +13,30 @@ public interface HackathonService {
     Call<Travels> getAllTravels();
 
     @GET("travels")
-    Call<Travels> getUserTravels( @Query("u") String userId);
+    Call<Travels> getUserTravels(
+            @Query("u") String userId,
+            @Query("w") String weight,
+            @Query("f") String from,
+            @Query("t") String to
+    );
+
+    @GET("travels")
+    Call<Travels> getSearchTravels(
+            @Query("w") String weight,
+            @Query("f") String from,
+            @Query("t") String to
+    );
 
     @GET("packs")
     Call<Packs> getAllPacks();
 
+    @GET("packs")
+    Call<Packs> getSearchPacks(
+            @Query("w") int weight,
+            @Query("f") String from,
+            @Query("t") String to
+    );
+
+    @GET("cities")
+    Call<Cities> getAllCities();
 }

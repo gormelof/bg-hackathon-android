@@ -1,156 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
     android:background="#FFFFFF"
     tools:context="hackathon.baggage.activities.MainActivity">
 
-    <LinearLayout
-        android:id="@+id/ll_top_container"
+    <TextView
+        fontPath="fonts/Ubuntu-Bold.ttf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        tools:ignore="MissingPrefix"/>
+
+    <AutoCompleteTextView
+        fontPath="fonts/Ubuntu-Regular.ttf"
+        android:id="@+id/et_activity_main_from"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:paddingTop="40dp"
-        android:paddingBottom="40dp"
-        android:orientation="vertical"
-        android:background="#8579F7">
+        android:layout_height="40dp"
+        android:padding="8dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/rounded_edittext"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:hint="From"
+        android:textColorHint="@color/concrete"
+        tools:ignore="MissingPrefix"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="Title"
-            android:textSize="25sp"
-            android:textColor="#FFFFFF"/>
+    <AutoCompleteTextView
+        fontPath="fonts/Ubuntu-Regular.ttf"
+        android:id="@+id/et_activity_main_to"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:padding="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_edittext"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:hint="To"
+        android:textColorHint="@color/concrete"
+        tools:ignore="MissingPrefix"/>
 
-        <TextView
-            android:id="@+id/txt_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:text="Description"
-            android:textSize="15sp"
-            android:textColor="#FFFFFF"/>
-    </LinearLayout>
+    <EditText
+        fontPath="fonts/Ubuntu-Regular.ttf"
+        android:id="@+id/et_activity_main_weight"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:padding="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_edittext"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:hint="Weight (Kg)"
+        android:textColorHint="@color/concrete"
+        tools:ignore="MissingPrefix"/>
+
+    <TextView
+        fontPath="fonts/Ubuntu-Regular.ttf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="How much do you send a package?"
+        android:textColor="@color/concrete"
+        android:textSize="14sp"
+        tools:ignore="MissingPrefix"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingLeft="32dp"
-        android:paddingHorizontal="32dp"
-        android:layout_marginTop="120dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@drawable/shadow">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="5dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:text="From"
-                android:textColor="#DCDADF"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="#FFFFFF"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="5dp"
-                android:text="Istanbul"
-                android:textColor="#6E63AB"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-
-            android:layout_marginTop="5dp"
-            android:background="@drawable/shadow">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="5dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:text="To"
-                android:textColor="#DCDADF"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="#FFFFFF"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="5dp"
-                android:text="London"
-                android:textColor="#6E63AB"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/shadow">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="5dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:text="Baggage"
-                android:textColor="#DCDADF"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="#FFFFFF"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="5dp"
-                android:text="7 kg"
-                android:textColor="#6E63AB"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/shadow">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="5dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:text="Date"
-                android:textColor="#DCDADF"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="#FFFFFF"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="5dp"
-                android:text="17 April 2018"
-                android:textColor="#6E63AB"/>
-        </LinearLayout>
+        android:orientation="horizontal">
 
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/capacity_rounded_bg"
-            android:text="SEARCH"
-            android:textColor="#ffffff"/>
-    </LinearLayout>
+            fontPath="fonts/Ubuntu-Regular.ttf"
+            android:id="@+id/btn_activity_main_search_pack"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="0.5"
+            android:padding="8dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/search_pack_button"
+            android:text="SERACH PACK"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            tools:ignore="MissingPrefix"/>
 
-</RelativeLayout>
+        <View
+            android:layout_width="3dp"
+            android:layout_height="match_parent"
+            android:background="@color/white"/>
+
+        <Button
+            fontPath="fonts/Ubuntu-Regular.ttf"
+            android:id="@+id/btn_activity_main_search_travel"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="0.5"
+            android:padding="8dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/search_travel_button"
+            android:text="SEARCH TRAVEL"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            tools:ignore="MissingPrefix"/>
+    </LinearLayout>
+</LinearLayout>

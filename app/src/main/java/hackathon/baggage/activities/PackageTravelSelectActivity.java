@@ -11,7 +11,6 @@ import hackathon.baggage.HackathonService;
 import hackathon.baggage.R;
 import hackathon.baggage.ServiceGenerator;
 import hackathon.baggage.adapters.PackageTravelSelectAdapter;
-import hackathon.baggage.adapters.TravelAdapter;
 import hackathon.baggage.response.travels.Travels;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -25,7 +24,7 @@ public class PackageTravelSelectActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private PackageTravelSelectAdapter mPackageTravelSelectAdapter;
 
-    String userId;
+    String userId = "5a883f3675e4b725e03a7bc9";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +38,15 @@ public class PackageTravelSelectActivity extends AppCompatActivity {
         mRecyclerView = (RecyclerView) findViewById(R.id.rv_pack_request_travel_list);
 
         Intent intent = getIntent();
-        userId = intent.getStringExtra("USER_ID");
+        String packageUserId = intent.getStringExtra("USER_ID");
+        String packageId = intent.getStringExtra("PACKAGE_ID");
+        String packageWeight = intent.getStringExtra("WEIGHT");
+        String packageFrom = intent.getStringExtra("FROM");
+        String packageTo = intent.getStringExtra("TO");
 
         HackathonService hackathonService = ServiceGenerator.createService(HackathonService.class);
 
-        Call<Travels> call = hackathonService.getUserTravels(userId);
+        Call<Travels> call = hackathonService.getUserTravels(userId, packageWeight, packageFrom, packageTo);
         call.enqueue(new Callback<Travels>() {
             @Override
             public void onResponse(Call<Travels> call, Response<Travels> response) {

@@ -6,6 +6,9 @@
 
     <!-- start ubuntu color platte -->
     <color name="ubuntuOrange">#E95420</color>
+    <color name="light_aubergine">#77216F</color>
+    <color name="mid_aubergine">#5E2750</color>
+    <color name="dark_aubergine">#2C001E</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <!-- end ubuntu color platte -->

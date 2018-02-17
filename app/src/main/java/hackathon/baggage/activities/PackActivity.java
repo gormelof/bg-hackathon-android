@@ -2,10 +2,12 @@ package hackathon.baggage.activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 
 import hackathon.baggage.HackathonService;
@@ -13,6 +15,7 @@ import hackathon.baggage.R;
 import hackathon.baggage.ServiceGenerator;
 import hackathon.baggage.adapters.PackageAdapter;
 import hackathon.baggage.listeners.RecyclerItemClickListener;
+import hackathon.baggage.response.packs.Datum;
 import hackathon.baggage.response.packs.Packs;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -42,34 +45,52 @@ public class PackActivity extends AppCompatActivity {
         Call<Packs> call = hackathonService.getAllPacks();
         call.enqueue(new Callback<Packs>() {
             @Override
-            public void onResponse(Call<Packs> call, final Response<Packs> response) {
+            public void onResponse(@NonNull Call<Packs> call, @NonNull final Response<Packs> response) {
                 if (response.isSuccessful()) {
+                    Log.i(TAG, Integer.toString(response.code()) + ":" + response.message());
+
                     mPackageAdapter = new PackageAdapter(getApplicationContext(), response.body().getData());
-                    mRecyclerView.setAdapter(mPackageAdapter);
                     LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
                     linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
                     mRecyclerView.setLayoutManager(linearLayoutManager);
+                    mRecyclerView.setAdapter(mPackageAdapter);
 
                     mRecyclerView.addOnItemTouchListener(
-                            new RecyclerItemClickListener(getApplicationContext(), mRecyclerView ,new RecyclerItemClickListener.OnItemClickListener() {
-                                @Override public void onItemClick(View view, int position) {
-                                    String userId = response.body().getData().get(position).getUser().getId();
-                                    Intent intent = new Intent(getApplicationContext(), PackageTravelSelectActivity.class);
-                                    intent.putExtra("USER_ID", userId);
-                                    startActivity(intent);
-                                }
+                        new RecyclerItemClickListener(getApplicationContext(), mRecyclerView ,
+                                new RecyclerItemClickListener.OnItemClickListener() {
 
-                                @Override public void onLongItemClick(View view, int position) {
-                                    // do whatever
-                                }
-                            })
+                            @Override public void onItemClick(View view, int position) {
+                                Datum clickedItem = response.body().getData().get(position);
+
+                                String userId = clickedItem.getUser().getId();
+                                String packageId = clickedItem.getId();
+                                String weight = Integer.toString(clickedItem.getWeight());
+                                String from = clickedItem.getFrom();
+                                String to = clickedItem.getTo();
+
+                                Intent intent = new Intent(getApplicationContext(), PackageTravelSelectActivity.class);
+
+                                intent.putExtra("PACKAGE_USER_ID", userId);
+                                intent.putExtra("PACKAGE_ID", packageId);
+                                intent.putExtra("WEIGHT", weight);
+                                intent.putExtra("FROM", from);
+                                intent.putExtra("TO", to);
+
+                                startActivity(intent);
+                            }
+
+                            @Override public void onLongItemClick(View view, int position) {
+                                // do whatever
+                            }
+
+                        })
                     );
                 }
             }
 
             @Override
             public void onFailure(Call<Packs> call, Throwable t) {
-
+                Log.e(TAG, t.getMessage());
             }
         });
 
