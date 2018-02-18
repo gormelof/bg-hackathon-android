@@ -8,12 +8,14 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import hackathon.baggage.HackathonService;
 import hackathon.baggage.R;
 import hackathon.baggage.ServiceGenerator;
 import hackathon.baggage.models.Pack;
 import hackathon.baggage.response.cities.Cities;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -45,7 +47,7 @@ public class PackCreateActivity extends BaseActivity {
 
         mCreate = (Button) findViewById(R.id.btn_activity_pack_create_create);
 
-        HackathonService hackathonService = ServiceGenerator.createService(HackathonService.class);
+        final HackathonService hackathonService = ServiceGenerator.createService(HackathonService.class);
 
         Call<Cities> call = hackathonService.getAllCities();
 
@@ -75,6 +77,32 @@ public class PackCreateActivity extends BaseActivity {
                 String weight = mWeight.getText().toString();
 
                 Pack pack = new Pack(from, to, weight);
+
+                Call<ResponseBody> call = hackathonService.createPack(pack);
+
+                call.enqueue(new Callback<ResponseBody>() {
+                    @Override
+                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                        if (response.isSuccessful()) {
+                            Context context = getApplicationContext();
+                            CharSequence text = "Success! Package created.";
+                            int duration = Toast.LENGTH_SHORT;
+
+                            Toast toast = Toast.makeText(context, text, duration);
+                            toast.show();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<ResponseBody> call, Throwable t) {
+                        Context context = getApplicationContext();
+                        CharSequence text = "Failed! Package not created.";
+                        int duration = Toast.LENGTH_SHORT;
+
+                        Toast toast = Toast.makeText(context, text, duration);
+                        toast.show();
+                    }
+                });
             }
         });
     }
@@ -105,5 +133,4 @@ public class PackCreateActivity extends BaseActivity {
         Intent intent = new Intent(this, NotificationActivity.class);
         startActivity(intent);
     }
-
 }
