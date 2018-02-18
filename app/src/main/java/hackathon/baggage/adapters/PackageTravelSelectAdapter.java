@@ -5,7 +5,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.text.DateFormat;
@@ -70,8 +69,7 @@ public class PackageTravelSelectAdapter extends RecyclerView.Adapter<PackageTrav
     }
 
     class TravelViewHolder extends RecyclerView.ViewHolder{
-        ImageView mPhoto;
-        TextView mName, mWeight, mFrom, mTo, mDate;
+        TextView mWeight, mFrom, mTo, mDate;
 
         public TravelViewHolder(View itemView) {
             super(itemView);

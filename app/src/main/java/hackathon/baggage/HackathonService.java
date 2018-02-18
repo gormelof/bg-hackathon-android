@@ -31,8 +31,16 @@ public interface HackathonService {
     Call<Packs> getAllPacks();
 
     @GET("packs")
+    Call<Packs> getUserPacks(
+            @Query("u") String userId,
+            @Query("w") String weight,
+            @Query("f") String from,
+            @Query("t") String to
+    );
+
+    @GET("packs")
     Call<Packs> getSearchPacks(
-            @Query("w") int weight,
+            @Query("w") String weight,
             @Query("f") String from,
             @Query("t") String to
     );

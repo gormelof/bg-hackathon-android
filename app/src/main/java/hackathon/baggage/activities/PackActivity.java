@@ -40,9 +40,19 @@ public class PackActivity extends AppCompatActivity {
 
         mRecyclerView = (RecyclerView) findViewById(R.id.rv_package_list);
 
+        Intent intent = getIntent();
+        String from = intent.getStringExtra("FROM");
+        String to = intent.getStringExtra("TO");
+        String weight = intent.getStringExtra("WEIGHT");
+
         HackathonService hackathonService = ServiceGenerator.createService(HackathonService.class);
 
-        Call<Packs> call = hackathonService.getAllPacks();
+        Call<Packs> call = hackathonService.getSearchPacks(
+                weight,
+                from,
+                to
+        );
+
         call.enqueue(new Callback<Packs>() {
             @Override
             public void onResponse(@NonNull Call<Packs> call, @NonNull final Response<Packs> response) {

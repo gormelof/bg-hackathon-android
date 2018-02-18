@@ -36,6 +36,8 @@
         </activity>
         <activity android:name=".activities.PackageTravelSelectActivity">
         </activity>
+        <activity android:name=".activities.TravelPackSelectActivity">
+        </activity>
     </application>
 
 </manifest>

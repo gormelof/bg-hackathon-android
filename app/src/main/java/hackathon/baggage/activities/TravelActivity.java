@@ -6,15 +6,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-
-import java.util.Objects;
+import android.view.View;
 
 import hackathon.baggage.HackathonService;
 import hackathon.baggage.R;
 import hackathon.baggage.ServiceGenerator;
-import hackathon.baggage.Utils;
-import hackathon.baggage.models.Travel;
 import hackathon.baggage.adapters.TravelAdapter;
+import hackathon.baggage.listeners.RecyclerItemClickListener;
+import hackathon.baggage.response.travels.Datum;
 import hackathon.baggage.response.travels.Travels;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -54,13 +53,44 @@ public class TravelActivity extends AppCompatActivity {
 
         call.enqueue(new Callback<Travels>() {
             @Override
-            public void onResponse(Call<Travels> call, Response<Travels> response) {
+            public void onResponse(Call<Travels> call, final Response<Travels> response) {
                 if (response.isSuccessful()) {
                     mTravelAdapter = new TravelAdapter(getApplicationContext(), response.body().getData());
                     LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
                     linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
                     mRecyclerView.setLayoutManager(linearLayoutManager);
                     mRecyclerView.setAdapter(mTravelAdapter);
+
+                    mRecyclerView.addOnItemTouchListener(
+                        new RecyclerItemClickListener(getApplicationContext(), mRecyclerView ,
+                            new RecyclerItemClickListener.OnItemClickListener() {
+
+                                @Override public void onItemClick(View view, int position) {
+                                    Datum clickedItem = response.body().getData().get(position);
+
+                                    String userId = clickedItem.getUser().getId();
+                                    String packageId = clickedItem.getId();
+                                    String weight = Integer.toString(clickedItem.getWeight());
+                                    String from = clickedItem.getFrom();
+                                    String to = clickedItem.getTo();
+
+                                    Intent intent = new Intent(getApplicationContext(), TravelPackSelectActivity.class);
+
+                                    intent.putExtra("PACKAGE_USER_ID", userId);
+                                    intent.putExtra("PACKAGE_ID", packageId);
+                                    intent.putExtra("WEIGHT", weight);
+                                    intent.putExtra("FROM", from);
+                                    intent.putExtra("TO", to);
+
+                                    startActivity(intent);
+                                }
+
+                                @Override public void onLongItemClick(View view, int position) {
+                                    // do whatever
+                                }
+
+                            })
+                    );
                 }
             }
 
