@@ -23,7 +23,7 @@ import retrofit2.Response;
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class PackActivity extends AppCompatActivity {
+public class PackActivity extends BaseActivity {
     private static final String TAG = PackActivity.class.getSimpleName().toUpperCase();
 
     private RecyclerView mRecyclerView;
@@ -110,4 +110,36 @@ public class PackActivity extends AppCompatActivity {
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
+
+
+    @Override
+    public void clickBottomSearchItem(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void clickBottomPackageItem(View view) {
+        Intent intent = new Intent(this, PackCreateActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void clickBottomTravelerItem(View view) {
+        Intent intent = new Intent(this, TravelCreateActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void clickBottomRequestItem(View view) {
+        Intent intent = new Intent(this, RequestActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void clickBottomDealItem(View view) {
+        Intent intent = new Intent(this, DealActivity.class);
+        startActivity(intent);
+    }
+
 }

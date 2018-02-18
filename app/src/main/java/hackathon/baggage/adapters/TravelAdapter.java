@@ -2,6 +2,7 @@ package hackathon.baggage.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +25,7 @@ import hackathon.baggage.R;
 import hackathon.baggage.response.travels.Datum;
 
 public class TravelAdapter extends RecyclerView.Adapter<TravelAdapter.TravelViewHolder> {
+    private static final String TAG = TravelAdapter.class.getSimpleName().toUpperCase();
 
     private List<Datum> mDataList;
     private LayoutInflater mInflater;
@@ -43,16 +45,20 @@ public class TravelAdapter extends RecyclerView.Adapter<TravelAdapter.TravelView
 
     @Override
     public void onBindViewHolder(TravelViewHolder holder, int position) {
-        Picasso.with(mContext).load(mDataList.get(position).getUser().getPhoto()).into(holder.mPhoto);
-        holder.mName.setText(mDataList.get(position).getUser().getName());
-        holder.mWeight.setText(Integer.toString(mDataList.get(position).getWeight()));
-        holder.mFrom.setText(mDataList.get(position).getFrom());
-        holder.mTo.setText(mDataList.get(position).getTo());
-
-        DateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.ENGLISH);
 
 
         try {
+            Picasso.with(mContext).load(mDataList.get(position).getUser().getPhoto()).into(holder.mPhoto);
+            holder.mName.setText(mDataList.get(position).getUser().getName());
+            holder.mWeight.setText(Integer.toString(mDataList.get(position).getWeight()));
+            holder.mFrom.setText(mDataList.get(position).getFrom());
+            holder.mTo.setText(mDataList.get(position).getTo());
+        } catch (NullPointerException e) {
+            Log.e(TAG, e.getMessage());
+        }
+
+        try {
+            DateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.ENGLISH);
             Date date = format.parse(mDataList.get(position).getDate());
             Calendar calendar = Calendar.getInstance();
             calendar.setTime(date);

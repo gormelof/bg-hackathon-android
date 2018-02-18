@@ -103,8 +103,7 @@ public class MainActivity extends BaseActivity{
     }
 
     @Override
-    public void clickBottomHomeItem(View view) {
-    }
+    public void clickBottomSearchItem(View view) {}
 
     @Override
     public void clickBottomPackageItem(View view) {
@@ -119,8 +118,14 @@ public class MainActivity extends BaseActivity{
     }
 
     @Override
-    public void clickBottomNotificationItem(View view) {
-        // Intent intent = new Intent(this, NotificationActivity.class);
-        // startActivity(intent);
+    public void clickBottomRequestItem(View view) {
+        Intent intent = new Intent(this, RequestActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void clickBottomDealItem(View view) {
+        Intent intent = new Intent(this, DealActivity.class);
+        startActivity(intent);
     }
 }

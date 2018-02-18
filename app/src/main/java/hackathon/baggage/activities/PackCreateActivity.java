@@ -76,7 +76,7 @@ public class PackCreateActivity extends BaseActivity {
                 String to = mTo.getText().toString();
                 String weight = mWeight.getText().toString();
 
-                Pack pack = new Pack(from, to, weight);
+                Pack pack = new Pack(from, to, weight, USER_ID);
 
                 Call<ResponseBody> call = hackathonService.createPack(pack);
 
@@ -113,14 +113,13 @@ public class PackCreateActivity extends BaseActivity {
     }
 
     @Override
-    public void clickBottomHomeItem(View view) {
+    public void clickBottomSearchItem(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
     @Override
-    public void clickBottomPackageItem(View view) {
-    }
+    public void clickBottomPackageItem(View view) {}
 
     @Override
     public void clickBottomTravelerItem(View view) {
@@ -129,8 +128,15 @@ public class PackCreateActivity extends BaseActivity {
     }
 
     @Override
-    public void clickBottomNotificationItem(View view) {
-        // Intent intent = new Intent(this, NotificationActivity.class);
-        // startActivity(intent);
+    public void clickBottomRequestItem(View view) {
+        Intent intent = new Intent(this, RequestActivity.class);
+        startActivity(intent);
     }
+
+    @Override
+    public void clickBottomDealItem(View view) {
+        Intent intent = new Intent(this, DealActivity.class);
+        startActivity(intent);
+    }
+
 }

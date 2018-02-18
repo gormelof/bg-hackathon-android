@@ -46,7 +46,7 @@ public class PackageAdapter extends RecyclerView.Adapter<PackageAdapter.PackageV
     @Override
     public void onBindViewHolder(PackageViewHolder holder, int position) {
         try {
-            // Picasso.with(mContext).load(mDataList.get(position).getUser().getPhoto()).into(holder.mPhoto);
+            Picasso.with(mContext).load(mDataList.get(position).getUser().getPhoto()).into(holder.mPhoto);
             holder.mName.setText(mDataList.get(position).getUser().getName());
             holder.mWeight.setText(Integer.toString(mDataList.get(position).getWeight()));
             holder.mFrom.setText(mDataList.get(position).getFrom());

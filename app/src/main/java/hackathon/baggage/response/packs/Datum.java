@@ -24,6 +24,9 @@ public class Datum {
     @SerializedName("__v")
     @Expose
     private Integer v;
+    @SerializedName("status")
+    @Expose
+    private String status;
     @SerializedName("created_at")
     @Expose
     private String createdAt;
@@ -80,8 +83,15 @@ public class Datum {
         return createdAt;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
-
 }

@@ -23,19 +23,19 @@
             <ImageButton
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:src="@drawable/home"
+                android:src="@drawable/icons8_search"
                 android:scaleType="fitXY"
                 android:background="#00000000"
-                android:onClick="clickBottomHomeItem"/>
+                android:onClick="clickBottomSearchItem"/>
 
             <TextView
                 fontPath="fonts/Ubuntu-Light.ttf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Home"
-                android:textColor="@color/black"
+                android:text="Search"
+                android:textColor="@color/concrete"
                 android:textSize="12sp"
-                android:onClick="clickBottomHomeItem"
+                android:onClick="clickBottomSearchItem"
                 tools:ignore="MissingPrefix"/>
         </LinearLayout>
 
@@ -59,7 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Package"
-                android:textColor="@color/black"
+                android:textColor="@color/concrete"
                 android:textSize="12sp"
                 android:onClick="clickBottomPackageItem"
                 tools:ignore="MissingPrefix"/>
@@ -85,7 +85,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Traveler"
-                android:textColor="@color/black"
+                android:textColor="@color/concrete"
                 android:textSize="12sp"
                 android:onClick="clickBottomTravelerItem"
                 tools:ignore="MissingPrefix"/>
@@ -101,19 +101,45 @@
             <ImageButton
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:src="@drawable/appointment_reminders"
+                android:src="@drawable/ask_question"
                 android:scaleType="fitXY"
                 android:background="#00000000"
-                android:onClick="clickBottomNotificationItem"/>
+                android:onClick="clickBottomRequestItem"/>
 
             <TextView
                 fontPath="fonts/Ubuntu-Light.ttf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Notifications"
-                android:textColor="@color/black"
+                android:text="Requests"
+                android:textColor="@color/concrete"
                 android:textSize="12sp"
-                android:onClick="clickBottomNotificationItem"
+                android:onClick="clickBottomRequestItem"
+                tools:ignore="MissingPrefix"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="0.2"
+            android:gravity="center">
+
+            <ImageButton
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/handshake"
+                android:scaleType="fitXY"
+                android:background="#00000000"
+                android:onClick="clickBottomDealItem"/>
+
+            <TextView
+                fontPath="fonts/Ubuntu-Light.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Deals"
+                android:textColor="@color/concrete"
+                android:textSize="12sp"
+                android:onClick="clickBottomDealItem"
                 tools:ignore="MissingPrefix"/>
         </LinearLayout>
         

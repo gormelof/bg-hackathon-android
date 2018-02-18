@@ -5,12 +5,14 @@ public class Travel {
     private String to;
     private String weight;
     private String date;
+    private String user;
 
-    public Travel(String from, String to, String weight, String date) {
+    public Travel(String from, String to, String weight, String date, String user) {
         this.from = from;
         this.to = to;
         this.weight = weight;
         this.date = date;
+        this.user = user;
     }
 
     public String getFrom() {
@@ -43,5 +45,13 @@ public class Travel {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String userId) {
+        this.user = userId;
     }
 }

@@ -24,7 +24,7 @@ public class TravelPackSelectActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private TravelPackSelectAdapter mPackageTravelSelectAdapter;
 
-    String userId = "5a88cdc4445b276d3c540d55";
+    String userId = "5a88b2145e758d6f855909b6";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

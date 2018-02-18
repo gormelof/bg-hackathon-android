@@ -32,6 +32,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class TravelCreateActivity extends BaseActivity {
     private static final String TAG = TravelCreateActivity.class.getSimpleName().toUpperCase();
+    private static final String USER_ID = "5a88cdc4445b276d3c540d55";
 
     private AutoCompleteTextView mFrom;
     private AutoCompleteTextView mTo;
@@ -116,7 +117,7 @@ public class TravelCreateActivity extends BaseActivity {
                 String weight = mWeight.getText().toString();
                 String date = mDate.getText().toString();
 
-                Travel travel = new Travel(from, to, weight, date);
+                Travel travel = new Travel(from, to, weight, date, USER_ID);
 
                 Call<ResponseBody> call = hackathonService.createTravel(travel);
 
@@ -153,7 +154,7 @@ public class TravelCreateActivity extends BaseActivity {
     }
 
     @Override
-    public void clickBottomHomeItem(View view) {
+    public void clickBottomSearchItem(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
@@ -165,13 +166,18 @@ public class TravelCreateActivity extends BaseActivity {
     }
 
     @Override
-    public void clickBottomTravelerItem(View view) {
+    public void clickBottomTravelerItem(View view) {}
+
+    @Override
+    public void clickBottomRequestItem(View view) {
+        Intent intent = new Intent(this, RequestActivity.class);
+        startActivity(intent);
     }
 
     @Override
-    public void clickBottomNotificationItem(View view) {
-        // Intent intent = new Intent(this, NotificationActivity.class);
-        // startActivity(intent);
+    public void clickBottomDealItem(View view) {
+        Intent intent = new Intent(this, DealActivity.class);
+        startActivity(intent);
     }
 
 }
