@@ -130,7 +130,7 @@ public class PackCreateActivity extends BaseActivity {
 
     @Override
     public void clickBottomNotificationItem(View view) {
-        Intent intent = new Intent(this, NotificationActivity.class);
-        startActivity(intent);
+        // Intent intent = new Intent(this, NotificationActivity.class);
+        // startActivity(intent);
     }
 }

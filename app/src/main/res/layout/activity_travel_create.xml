@@ -23,8 +23,9 @@
             android:textSize="25sp"
             tools:ignore="MissingPrefix"/>
 
-        <EditText
+        <AutoCompleteTextView
             fontPath="fonts/Ubuntu-Regular.ttf"
+            android:id="@+id/act_activity_travel_create_from"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="30dp"
@@ -36,8 +37,9 @@
             android:textSize="16sp"
             tools:ignore="MissingPrefix"/>
 
-        <EditText
+        <AutoCompleteTextView
             fontPath="fonts/Ubuntu-Regular.ttf"
+            android:id="@+id/act_activity_travel_create_to"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="8dp"
@@ -51,6 +53,7 @@
 
         <EditText
             fontPath="fonts/Ubuntu-Regular.ttf"
+            android:id="@+id/et_activity_travel_create_date"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="8dp"
@@ -64,6 +67,7 @@
 
         <EditText
             fontPath="fonts/Ubuntu-Regular.ttf"
+            android:id="@+id/et_activity_travel_create_weight"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="8dp"
@@ -87,6 +91,7 @@
 
         <Button
             fontPath="fonts/Ubuntu-Regular.ttf"
+            android:id="@+id/btn_activity_travel_create_create"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="12dp"
