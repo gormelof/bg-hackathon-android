@@ -1,4 +1,4 @@
-package hackathon.baggage;
+package hackathon.baggage.networking;
 
 import hackathon.baggage.models.Pack;
 import hackathon.baggage.models.Travel;

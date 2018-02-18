@@ -7,9 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import hackathon.baggage.HackathonService;
+import hackathon.baggage.networking.HackathonService;
 import hackathon.baggage.R;
-import hackathon.baggage.ServiceGenerator;
+import hackathon.baggage.networking.ServiceGenerator;
 import hackathon.baggage.adapters.TravelPackSelectAdapter;
 import hackathon.baggage.response.packs.Packs;
 import retrofit2.Call;

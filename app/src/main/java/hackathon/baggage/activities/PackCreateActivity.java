@@ -10,9 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import hackathon.baggage.HackathonService;
+import hackathon.baggage.networking.HackathonService;
 import hackathon.baggage.R;
-import hackathon.baggage.ServiceGenerator;
+import hackathon.baggage.networking.ServiceGenerator;
 import hackathon.baggage.models.Pack;
 import hackathon.baggage.response.cities.Cities;
 import okhttp3.ResponseBody;
@@ -119,7 +119,8 @@ public class PackCreateActivity extends BaseActivity {
     }
 
     @Override
-    public void clickBottomPackageItem(View view) {}
+    public void clickBottomPackageItem(View view) {
+    }
 
     @Override
     public void clickBottomTravelerItem(View view) {

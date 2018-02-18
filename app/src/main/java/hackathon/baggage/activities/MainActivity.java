@@ -2,30 +2,25 @@ package hackathon.baggage.activities;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import hackathon.baggage.HackathonService;
+import hackathon.baggage.networking.HackathonService;
 import hackathon.baggage.R;
-import hackathon.baggage.ServiceGenerator;
+import hackathon.baggage.networking.ServiceGenerator;
 import hackathon.baggage.response.cities.Cities;
-import hackathon.baggage.response.packs.Packs;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class MainActivity extends BaseActivity{
+public class MainActivity extends BaseActivity {
     private static final String TAG = MainActivity.class.getSimpleName().toUpperCase();
 
     private Button mSearchPack;
@@ -46,7 +41,6 @@ public class MainActivity extends BaseActivity{
 
         mSearchPack = (Button) findViewById(R.id.btn_activity_main_search_pack);
         mSearchTravel = (Button) findViewById(R.id.btn_activity_main_search_travel);
-
         mFrom = (AutoCompleteTextView) findViewById(R.id.et_activity_main_from);
         mTo = (AutoCompleteTextView) findViewById(R.id.et_activity_main_to);
         mWeight = (EditText) findViewById(R.id.et_activity_main_weight);
@@ -61,7 +55,6 @@ public class MainActivity extends BaseActivity{
                 if (response.isSuccessful()) {
                     ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(),
                             android.R.layout.simple_dropdown_item_1line, response.body().getData());
-
                     mFrom.setAdapter(adapter);
                     mTo.setAdapter(adapter);
                 }
@@ -69,10 +62,9 @@ public class MainActivity extends BaseActivity{
 
             @Override
             public void onFailure(Call<Cities> call, Throwable t) {
-
+                Log.e(TAG, t.getMessage());
             }
         });
-
 
         mSearchPack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,7 +95,8 @@ public class MainActivity extends BaseActivity{
     }
 
     @Override
-    public void clickBottomSearchItem(View view) {}
+    public void clickBottomSearchItem(View view) {
+    }
 
     @Override
     public void clickBottomPackageItem(View view) {

@@ -1,4 +1,4 @@
-package hackathon.baggage;
+package hackathon.baggage.networking;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;

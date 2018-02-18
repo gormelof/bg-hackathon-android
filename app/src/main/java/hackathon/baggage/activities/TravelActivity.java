@@ -8,9 +8,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import hackathon.baggage.HackathonService;
+import hackathon.baggage.networking.HackathonService;
 import hackathon.baggage.R;
-import hackathon.baggage.ServiceGenerator;
+import hackathon.baggage.networking.ServiceGenerator;
 import hackathon.baggage.adapters.TravelAdapter;
 import hackathon.baggage.listeners.RecyclerItemClickListener;
 import hackathon.baggage.response.travels.Datum;
@@ -62,34 +62,36 @@ public class TravelActivity extends AppCompatActivity {
                     mRecyclerView.setAdapter(mTravelAdapter);
 
                     mRecyclerView.addOnItemTouchListener(
-                        new RecyclerItemClickListener(getApplicationContext(), mRecyclerView ,
-                            new RecyclerItemClickListener.OnItemClickListener() {
+                            new RecyclerItemClickListener(getApplicationContext(), mRecyclerView,
+                                    new RecyclerItemClickListener.OnItemClickListener() {
 
-                                @Override public void onItemClick(View view, int position) {
-                                    Datum clickedItem = response.body().getData().get(position);
+                                        @Override
+                                        public void onItemClick(View view, int position) {
+                                            Datum clickedItem = response.body().getData().get(position);
 
-                                    String userId = clickedItem.getUser().getId();
-                                    String packageId = clickedItem.getId();
-                                    String weight = Integer.toString(clickedItem.getWeight());
-                                    String from = clickedItem.getFrom();
-                                    String to = clickedItem.getTo();
+                                            String userId = clickedItem.getUser().getId();
+                                            String packageId = clickedItem.getId();
+                                            String weight = Integer.toString(clickedItem.getWeight());
+                                            String from = clickedItem.getFrom();
+                                            String to = clickedItem.getTo();
 
-                                    Intent intent = new Intent(getApplicationContext(), TravelPackSelectActivity.class);
+                                            Intent intent = new Intent(getApplicationContext(), TravelPackSelectActivity.class);
 
-                                    intent.putExtra("PACKAGE_USER_ID", userId);
-                                    intent.putExtra("PACKAGE_ID", packageId);
-                                    intent.putExtra("WEIGHT", weight);
-                                    intent.putExtra("FROM", from);
-                                    intent.putExtra("TO", to);
+                                            intent.putExtra("PACKAGE_USER_ID", userId);
+                                            intent.putExtra("PACKAGE_ID", packageId);
+                                            intent.putExtra("WEIGHT", weight);
+                                            intent.putExtra("FROM", from);
+                                            intent.putExtra("TO", to);
 
-                                    startActivity(intent);
-                                }
+                                            startActivity(intent);
+                                        }
 
-                                @Override public void onLongItemClick(View view, int position) {
-                                    // do whatever
-                                }
+                                        @Override
+                                        public void onLongItemClick(View view, int position) {
+                                            // do whatever
+                                        }
 
-                            })
+                                    })
                     );
                 }
             }

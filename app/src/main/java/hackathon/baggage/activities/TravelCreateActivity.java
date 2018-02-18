@@ -5,9 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -18,9 +16,9 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 
-import hackathon.baggage.HackathonService;
+import hackathon.baggage.networking.HackathonService;
 import hackathon.baggage.R;
-import hackathon.baggage.ServiceGenerator;
+import hackathon.baggage.networking.ServiceGenerator;
 import hackathon.baggage.models.Travel;
 import hackathon.baggage.response.cities.Cities;
 import okhttp3.ResponseBody;
@@ -92,7 +90,7 @@ public class TravelCreateActivity extends BaseActivity {
                         TravelCreateActivity.this,
                         android.R.style.Theme_Holo_Light_Dialog_MinWidth,
                         mDateSetListener,
-                        year,month,day
+                        year, month, day
                 );
 
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -103,7 +101,7 @@ public class TravelCreateActivity extends BaseActivity {
         mDateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                String date = Integer.toString(year) + "-" + Integer.toString(month+1) + "-" + Integer.toString(day);
+                String date = Integer.toString(year) + "-" + Integer.toString(month + 1) + "-" + Integer.toString(day);
                 mDate.setText(date);
             }
         };
@@ -165,7 +163,8 @@ public class TravelCreateActivity extends BaseActivity {
     }
 
     @Override
-    public void clickBottomTravelerItem(View view) {}
+    public void clickBottomTravelerItem(View view) {
+    }
 
     @Override
     public void clickBottomRequestItem(View view) {

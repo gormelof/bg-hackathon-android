@@ -22,6 +22,7 @@ public class PackageTravelSelectAdapter extends RecyclerView.Adapter<PackageTrav
 
     private List<Datum> mDataList;
     private LayoutInflater mInflater;
+
     public PackageTravelSelectAdapter(Context context, List<Datum> dataList) {
         mInflater = LayoutInflater.from(context);
         mDataList = dataList;
@@ -68,7 +69,7 @@ public class PackageTravelSelectAdapter extends RecyclerView.Adapter<PackageTrav
         return mDataList.size();
     }
 
-    class TravelViewHolder extends RecyclerView.ViewHolder{
+    class TravelViewHolder extends RecyclerView.ViewHolder {
         TextView mWeight, mFrom, mTo, mDate;
 
         public TravelViewHolder(View itemView) {

@@ -30,8 +30,9 @@ public class TravelAdapter extends RecyclerView.Adapter<TravelAdapter.TravelView
     private List<Datum> mDataList;
     private LayoutInflater mInflater;
     private Context mContext;
+
     public TravelAdapter(Context context, List<Datum> dataList) {
-        mContext  = context;
+        mContext = context;
         mInflater = LayoutInflater.from(context);
         mDataList = dataList;
     }
@@ -83,7 +84,7 @@ public class TravelAdapter extends RecyclerView.Adapter<TravelAdapter.TravelView
         return mDataList.size();
     }
 
-    class TravelViewHolder extends RecyclerView.ViewHolder{
+    class TravelViewHolder extends RecyclerView.ViewHolder {
         ImageView mPhoto;
         TextView mName, mWeight, mFrom, mTo, mDate;
 

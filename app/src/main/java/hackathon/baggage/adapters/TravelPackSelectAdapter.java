@@ -71,7 +71,7 @@ public class TravelPackSelectAdapter extends RecyclerView.Adapter<TravelPackSele
         return mDataList.size();
     }
 
-    class PackageViewHolder extends RecyclerView.ViewHolder{
+    class PackageViewHolder extends RecyclerView.ViewHolder {
         TextView mWeight, mFrom, mTo, mDate;
 
         public PackageViewHolder(View itemView) {

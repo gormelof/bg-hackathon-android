@@ -39,5 +39,6 @@ public class DealActivity extends BaseActivity {
     }
 
     @Override
-    public void clickBottomDealItem(View view) {}
+    public void clickBottomDealItem(View view) {
+    }
 }

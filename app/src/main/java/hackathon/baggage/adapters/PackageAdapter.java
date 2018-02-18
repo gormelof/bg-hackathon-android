@@ -31,7 +31,7 @@ public class PackageAdapter extends RecyclerView.Adapter<PackageAdapter.PackageV
     private Context mContext;
 
     public PackageAdapter(Context context, List<Datum> dataList) {
-        mContext  = context;
+        mContext = context;
         mInflater = LayoutInflater.from(context);
         mDataList = dataList;
     }
@@ -84,7 +84,7 @@ public class PackageAdapter extends RecyclerView.Adapter<PackageAdapter.PackageV
         return mDataList.size();
     }
 
-    class PackageViewHolder extends RecyclerView.ViewHolder{
+    class PackageViewHolder extends RecyclerView.ViewHolder {
         ImageView mPhoto;
         TextView mName, mWeight, mFrom, mTo, mDate;
 

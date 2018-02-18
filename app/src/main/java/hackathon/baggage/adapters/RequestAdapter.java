@@ -21,8 +21,9 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestV
     private List<Datum> mDataList;
     private LayoutInflater mInflater;
     private Context mContext;
+
     public RequestAdapter(Context context, List<Datum> dataList) {
-        mContext  = context;
+        mContext = context;
         mInflater = LayoutInflater.from(context);
         mDataList = dataList;
     }
@@ -37,7 +38,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestV
     @Override
     public void onBindViewHolder(RequestViewHolder holder, int position) {
         holder.mInfo.setText("You have a pending request.");
-        if(Objects.equals(mDataList.get(position).getTravel().getUser(), BaseActivity.USER_ID)) {
+        if (Objects.equals(mDataList.get(position).getTravel().getUser(), BaseActivity.USER_ID)) {
             holder.mInfoPhoto.setImageResource(R.drawable.passenger_with_baggage);
         } else if (Objects.equals(mDataList.get(position).getPack().getUser(), BaseActivity.USER_ID)) {
             holder.mInfoPhoto.setImageResource(R.drawable.icons8_package);
@@ -62,7 +63,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestV
         return mDataList.size();
     }
 
-    class RequestViewHolder extends RecyclerView.ViewHolder{
+    class RequestViewHolder extends RecyclerView.ViewHolder {
         ImageView mInfoPhoto;
         TextView mInfo;
 

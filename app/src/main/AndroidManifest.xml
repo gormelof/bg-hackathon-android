@@ -11,28 +11,40 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
+
         <activity android:name=".activities.MainActivity">
         </activity>
+
         <activity android:name=".activities.TravelActivity">
         </activity>
+
         <activity android:name=".activities.PackCreateActivity">
         </activity>
+
         <activity android:name=".activities.TravelCreateActivity">
         </activity>
+
         <activity android:name=".activities.PackActivity">
         </activity>
+
         <activity android:name=".activities.PackRequestActivity">
         </activity>
+
         <activity android:name=".activities.TravelRequestActivity">
         </activity>
+
         <activity android:name=".activities.StatusActivity">
         </activity>
+
         <activity android:name=".activities.PackageTravelSelectActivity">
         </activity>
+
         <activity android:name=".activities.TravelPackSelectActivity">
         </activity>
+
         <activity android:name=".activities.DealActivity">
         </activity>
+
         <activity android:name=".activities.RequestActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
