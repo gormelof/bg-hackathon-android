@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    android:paddingTop="2.5dp"
+    android:paddingBottom="2.5dp"
+    android:background="@color/clouds">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="0.2"
+            android:gravity="center">
+
+            <ImageButton
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/home"
+                android:scaleType="fitXY"
+                android:background="#00000000"
+                android:onClick="clickBottomHomeItem"/>
+
+            <TextView
+                fontPath="fonts/Ubuntu-Light.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:onClick="clickBottomHomeItem"
+                tools:ignore="MissingPrefix"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="0.2"
+            android:gravity="center">
+
+            <ImageButton
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/icons8_package"
+                android:scaleType="fitXY"
+                android:background="#00000000"
+                android:onClick="clickBottomPackageItem"/>
+
+            <TextView
+                fontPath="fonts/Ubuntu-Light.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Package"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:onClick="clickBottomPackageItem"
+                tools:ignore="MissingPrefix"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="0.2"
+            android:gravity="center">
+
+            <ImageButton
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/passenger_with_baggage"
+                android:scaleType="fitXY"
+                android:background="#00000000"
+                android:onClick="clickBottomTravelerItem"/>
+
+            <TextView
+                fontPath="fonts/Ubuntu-Light.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Traveler"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:onClick="clickBottomTravelerItem"
+                tools:ignore="MissingPrefix"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="0.2"
+            android:gravity="center">
+
+            <ImageButton
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/appointment_reminders"
+                android:scaleType="fitXY"
+                android:background="#00000000"
+                android:onClick="clickBottomNotificationItem"/>
+
+            <TextView
+                fontPath="fonts/Ubuntu-Light.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Notifications"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:onClick="clickBottomNotificationItem"
+                tools:ignore="MissingPrefix"/>
+        </LinearLayout>
+        
+    </LinearLayout>
+</FrameLayout>

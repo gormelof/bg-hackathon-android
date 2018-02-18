@@ -1,10 +1,17 @@
 package hackathon.baggage;
 
+import hackathon.baggage.models.Pack;
+import hackathon.baggage.models.Travel;
 import hackathon.baggage.response.cities.Cities;
 import hackathon.baggage.response.packs.Packs;
 import hackathon.baggage.response.travels.Travels;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
+import retrofit2.http.Body;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 public interface HackathonService {
@@ -47,4 +54,10 @@ public interface HackathonService {
 
     @GET("cities")
     Call<Cities> getAllCities();
+
+    @POST("packs")
+    Call<ResponseBody> createPack(@Body Pack pack);
+
+    @POST("travels")
+    Call<ResponseBody> createTravel(@Body Travel travel);
 }

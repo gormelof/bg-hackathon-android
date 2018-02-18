@@ -1,100 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
     android:background="@color/white"
     tools:context="hackathon.baggage.activities.PackCreateActivity">
 
-    <TextView
-        fontPath="fonts/Ubuntu-Bold.ttf"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Create Package"
-        android:textColor="@color/black"
-        android:textSize="25sp"
-        tools:ignore="MissingPrefix"/>
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <EditText
-        fontPath="fonts/Ubuntu-Regular.ttf"
+        <TextView
+            fontPath="fonts/Ubuntu-Bold.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create Package"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            tools:ignore="MissingPrefix"/>
+
+        <AutoCompleteTextView
+            fontPath="fonts/Ubuntu-Regular.ttf"
+            android:id="@+id/act_activity_pack_create_from"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:padding="8dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/rounded_edittext"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:hint="From"
+            android:textColorHint="@color/concrete"
+            tools:ignore="MissingPrefix"/>
+
+        <AutoCompleteTextView
+            fontPath="fonts/Ubuntu-Regular.ttf"
+            android:id="@+id/act_activity_pack_create_to"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_edittext"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:hint="To"
+            android:textColorHint="@color/concrete"
+            tools:ignore="MissingPrefix"/>
+
+        <EditText
+            fontPath="fonts/Ubuntu-Regular.ttf"
+            android:id="@+id/et_activity_pack_create_weight"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_edittext"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:hint="Weight (Kg)"
+            android:textColorHint="@color/concrete"
+            tools:ignore="MissingPrefix"/>
+
+        <TextView
+            fontPath="fonts/Ubuntu-Regular.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="How much do you send a package?"
+            android:textColor="@color/concrete"
+            android:textSize="14sp"
+            tools:ignore="MissingPrefix"/>
+
+        <Button
+            fontPath="fonts/Ubuntu-Regular.ttf"
+            android:id="@+id/btn_activity_pack_create_create"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:padding="8dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/rounded_button"
+            android:text="Create"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            tools:ignore="MissingPrefix"/>
+
+    </LinearLayout>
+
+    <include
+        layout="@layout/bottom_nav"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:padding="8dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/rounded_edittext"
-        android:text=""
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:hint="From"
-        android:textColorHint="@color/concrete"
-        tools:ignore="MissingPrefix"/>
-
-    <EditText
-        fontPath="fonts/Ubuntu-Regular.ttf"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:padding="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/rounded_edittext"
-        android:text=""
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:hint="To"
-        android:textColorHint="@color/concrete"
-        tools:ignore="MissingPrefix"/>
-
-    <EditText
-        fontPath="fonts/Ubuntu-Regular.ttf"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:padding="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/rounded_edittext"
-        android:text=""
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:hint="Date"
-        android:textColorHint="@color/concrete"
-        tools:ignore="MissingPrefix"/>
-
-    <EditText
-        fontPath="fonts/Ubuntu-Regular.ttf"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:padding="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/rounded_edittext"
-        android:text=""
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:hint="Weight (Kg)"
-        android:textColorHint="@color/concrete"
-        tools:ignore="MissingPrefix"/>
-
-    <TextView
-        fontPath="fonts/Ubuntu-Regular.ttf"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:text="How much do you send a package?"
-        android:textColor="@color/concrete"
-        android:textSize="14sp"
-        tools:ignore="MissingPrefix"/>
-
-    <Button
-        fontPath="fonts/Ubuntu-Regular.ttf"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:padding="8dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/rounded_button"
-        android:text="Create"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        tools:ignore="MissingPrefix"/>
-
-</LinearLayout>
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

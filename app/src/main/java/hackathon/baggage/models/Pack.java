@@ -1,20 +1,18 @@
 package hackathon.baggage.models;
 
-public class Travel {
+public class Pack {
     private String from;
     private String to;
     private String weight;
-    private String date;
-
-    public Travel(String from, String to, String weight, String date) {
-        this.from = from;
-        this.to = to;
-        this.weight = weight;
-        this.date = date;
-    }
 
     public String getFrom() {
         return from;
+    }
+
+    public Pack(String from, String to, String weight) {
+        this.from = from;
+        this.to = to;
+        this.weight = weight;
     }
 
     public void setFrom(String from) {
@@ -34,14 +32,7 @@ public class Travel {
     }
 
     public void setWeight(String weight) {
+
         this.weight = weight;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
     }
 }

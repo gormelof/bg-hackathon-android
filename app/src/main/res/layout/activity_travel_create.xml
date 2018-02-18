@@ -1,96 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:orientation="vertical"
-    android:padding="16dp"
     tools:context="hackathon.baggage.activities.TravelCreateActivity">
 
-    <TextView
-        fontPath="fonts/Ubuntu-Bold.ttf"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Create Travel"
-        android:textColor="@color/black"
-        android:textSize="25sp"
-        tools:ignore="MissingPrefix"/>
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <EditText
-        fontPath="fonts/Ubuntu-Regular.ttf"
+        <TextView
+            fontPath="fonts/Ubuntu-Bold.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create Travel"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            tools:ignore="MissingPrefix"/>
+
+        <EditText
+            fontPath="fonts/Ubuntu-Regular.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/rounded_edittext"
+            android:hint="From"
+            android:padding="8dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/concrete"
+            android:textSize="16sp"
+            tools:ignore="MissingPrefix"/>
+
+        <EditText
+            fontPath="fonts/Ubuntu-Regular.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_edittext"
+            android:hint="To"
+            android:padding="8dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/concrete"
+            android:textSize="16sp"
+            tools:ignore="MissingPrefix"/>
+
+        <EditText
+            fontPath="fonts/Ubuntu-Regular.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_edittext"
+            android:hint="Date"
+            android:padding="8dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/concrete"
+            android:textSize="16sp"
+            tools:ignore="MissingPrefix"/>
+
+        <EditText
+            fontPath="fonts/Ubuntu-Regular.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_edittext"
+            android:hint="Weight (Kg)"
+            android:padding="8dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/concrete"
+            android:textSize="16sp"
+            tools:ignore="MissingPrefix"/>
+
+        <TextView
+            fontPath="fonts/Ubuntu-Regular.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="How much you can take a package?"
+            android:textColor="@color/concrete"
+            android:textSize="14sp"
+            tools:ignore="MissingPrefix"/>
+
+        <Button
+            fontPath="fonts/Ubuntu-Regular.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/rounded_button"
+            android:padding="8dp"
+            android:text="Create"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            tools:ignore="MissingPrefix"/>
+
+    </LinearLayout>
+
+    <include
+        layout="@layout/bottom_nav"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/rounded_edittext"
-        android:hint="From"
-        android:padding="8dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/concrete"
-        android:textSize="16sp"
-        tools:ignore="MissingPrefix"/>
-
-    <EditText
-        fontPath="fonts/Ubuntu-Regular.ttf"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/rounded_edittext"
-        android:hint="To"
-        android:padding="8dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/concrete"
-        android:textSize="16sp"
-        tools:ignore="MissingPrefix"/>
-
-    <EditText
-        fontPath="fonts/Ubuntu-Regular.ttf"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/rounded_edittext"
-        android:hint="Date"
-        android:padding="8dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/concrete"
-        android:textSize="16sp"
-        tools:ignore="MissingPrefix"/>
-
-    <EditText
-        fontPath="fonts/Ubuntu-Regular.ttf"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/rounded_edittext"
-        android:hint="Weight (Kg)"
-        android:padding="8dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/concrete"
-        android:textSize="16sp"
-        tools:ignore="MissingPrefix"/>
-
-    <TextView
-        fontPath="fonts/Ubuntu-Regular.ttf"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:text="How much you can take a package?"
-        android:textColor="@color/concrete"
-        android:textSize="14sp"
-        tools:ignore="MissingPrefix"/>
-
-    <Button
-        fontPath="fonts/Ubuntu-Regular.ttf"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/rounded_button"
-        android:padding="8dp"
-        android:text="Create"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        tools:ignore="MissingPrefix"/>
-
-</LinearLayout>
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

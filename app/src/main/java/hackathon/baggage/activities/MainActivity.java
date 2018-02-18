@@ -25,7 +25,7 @@ import retrofit2.Response;
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends BaseActivity{
     private static final String TAG = MainActivity.class.getSimpleName().toUpperCase();
 
     private Button mSearchPack;
@@ -100,5 +100,27 @@ public class MainActivity extends AppCompatActivity{
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
+
+    @Override
+    public void clickBottomHomeItem(View view) {
+    }
+
+    @Override
+    public void clickBottomPackageItem(View view) {
+        Intent intent = new Intent(this, PackCreateActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void clickBottomTravelerItem(View view) {
+        Intent intent = new Intent(this, TravelCreateActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void clickBottomNotificationItem(View view) {
+        Intent intent = new Intent(this, NotificationActivity.class);
+        startActivity(intent);
     }
 }
