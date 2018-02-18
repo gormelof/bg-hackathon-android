@@ -71,18 +71,16 @@ public class PackageTravelSelectActivity extends BaseActivity {
                                             PackageTravelSelectActivity.this);
                                     builder.setTitle("Request");
                                     builder.setMessage("Would you like to make a recommendation for the transportation of your package?");
-                                    builder.setNegativeButton("Confirm",
-                                            new DialogInterface.OnClickListener() {
-                                                public void onClick(DialogInterface dialog, int which) {
-
-                                                    // create request
-
-                                                }
-                                            });
-                                    builder.setPositiveButton("Cancel",
+                                    builder.setNegativeButton("Cancel",
                                             new DialogInterface.OnClickListener() {
                                                 public void onClick(DialogInterface dialog, int which) {
                                                     // close
+                                                }
+                                            });
+                                    builder.setPositiveButton("Confirm",
+                                            new DialogInterface.OnClickListener() {
+                                                public void onClick(DialogInterface dialog, int which) {
+
                                                 }
                                             });
                                     builder.show();

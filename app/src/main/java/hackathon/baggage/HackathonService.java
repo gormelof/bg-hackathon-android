@@ -4,6 +4,7 @@ import hackathon.baggage.models.Pack;
 import hackathon.baggage.models.Travel;
 import hackathon.baggage.response.cities.Cities;
 import hackathon.baggage.response.packs.Packs;
+import hackathon.baggage.response.requests.Requests;
 import hackathon.baggage.response.travels.Travels;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -32,6 +33,9 @@ public interface HackathonService {
             @Query("t") String to
     );
 
+    @POST("travels")
+    Call<ResponseBody> createTravel(@Body Travel travel);
+
     @GET("packs")
     Call<Packs> getAllPacks();
 
@@ -50,12 +54,14 @@ public interface HackathonService {
             @Query("t") String to
     );
 
-    @GET("cities")
-    Call<Cities> getAllCities();
-
     @POST("packs")
     Call<ResponseBody> createPack(@Body Pack pack);
 
-    @POST("travels")
-    Call<ResponseBody> createTravel(@Body Travel travel);
+    @GET("cities")
+    Call<Cities> getAllCities();
+
+    @GET("requests")
+    Call<Requests> getSentFromRequests(
+            @Query("sf") String userId
+    );
 }

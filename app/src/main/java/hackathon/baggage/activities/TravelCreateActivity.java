@@ -32,7 +32,6 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class TravelCreateActivity extends BaseActivity {
     private static final String TAG = TravelCreateActivity.class.getSimpleName().toUpperCase();
-    private static final String USER_ID = "5a88cdc4445b276d3c540d55";
 
     private AutoCompleteTextView mFrom;
     private AutoCompleteTextView mTo;
